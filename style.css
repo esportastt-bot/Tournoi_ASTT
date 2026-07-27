@@ -284,10 +284,9 @@ header.scrolled {
 
 .about-image-wrapper iframe.section-iframe {
     width: 100%;
-    height: 450px; /* Ajuste la hauteur selon tes préférences pour un Short vertical */
+    height: 450px;
     border: none;
     display: block;
-    object-fit: cover;
 }
 
 /* ==========================================================================
@@ -498,13 +497,88 @@ header.scrolled {
 }
 
 @media (max-width: 768px) {
-    .nav-links, .d-none-mobile { display: none; }
-    .burger { display: block; }
-    .hero-title { font-size: 2.2rem; }
-    .hero-title .title-sub { font-size: 1.4rem; }
-    .section-title { font-size: 2.2rem; }
-    .huge-title { font-size: 2rem; }
-    .nav-menu { position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-darker); border-bottom: 1px solid var(--neon-cyan); }
-    .nav-links.active { display: flex; flex-direction: column; padding: 20px 0; gap: 20px; }
-    .info-grid.five-cards { grid-template-columns: 1fr; }
+    .nav-container {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 1.1rem !important;
+        gap: 6px;
+        max-width: 75%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .eva-tag-nav {
+        font-size: 0.65rem;
+        padding: 2px 4px;
+        letter-spacing: 1px;
+    }
+
+    .nav-links, .d-none-mobile { 
+        display: none; 
+    }
+    
+    .burger { 
+        display: block; 
+    }
+
+    .nav-menu { 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        width: 100%; 
+        background: rgba(13, 17, 26, 0.98); 
+        border-bottom: 1px solid var(--neon-cyan); 
+        backdrop-filter: blur(15px);
+    }
+    
+    .nav-links.active { 
+        display: flex; 
+        flex-direction: column; 
+        padding: 20px 0; 
+        gap: 15px; 
+        align-items: center;
+    }
+
+    .hero-title { 
+        font-size: 1.9rem !important; 
+        word-break: break-word;
+        padding: 0 10px;
+    }
+    
+    .hero-title .title-sub { 
+        font-size: 1.2rem !important; 
+        letter-spacing: 2px; 
+    }
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .info-grid.five-cards { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .about-grid, .rules-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    .twitch-card {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .arena-banner, .season-highlight-banner {
+        height: 280px;
+    }
+
+    .huge-title {
+        font-size: 2.1rem !important;
+    }
 }
