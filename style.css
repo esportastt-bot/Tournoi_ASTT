@@ -172,6 +172,8 @@ header.scrolled {
     border: 1px solid #fff;
     box-shadow: 0 0 15px rgba(255, 183, 3, 0.7);
     animation: cyberGoldPulse 2s infinite;
+    padding: 5px 14px !important; /* 4px en haut/bas (à ajuster), 12px à gauche/droite */
+    line-height: 1.2;
 }
 .btn-register-nav:hover {
     background: #fff !important;
