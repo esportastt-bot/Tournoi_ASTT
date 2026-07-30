@@ -10,11 +10,14 @@
 </head>
 <body class="cyber-theme">
 
-    <!-- FOND GLOBAL FIXE (Image + Overlay) -->
+    <!-- FOND GLOBAL FIXE (Image d'origine) -->
     <div class="global-bg-container">
         <img src="https://www.firstplay.ro/wp-content/uploads/2025/06/eva-arena-sporturi-VR-bucuresti-2.jpg" alt="VR Background" class="global-bg-img">
         <div class="global-bg-overlay"></div>
     </div>
+
+    <!-- AMBIANCE DARK ARENA NÉON (Actif sur sections 2 à 6 via JS body.is-blurred) -->
+    <div class="tech-bg-overlay"></div>
 
     <div class="noise-overlay"></div>
     <div class="vignette"></div>
@@ -30,8 +33,12 @@
         </div>
     </div>
 
-    <!-- TIMELINE LATÉRALE INTERACTIVE (6 ÉTAPES) -->
+    <!-- TIMELINE LATÉRALE INTERACTIVE AVEC MENU BURGER INTÉGRÉ -->
     <div class="hud-timeline">
+        <button class="burger" aria-label="Menu" title="Menu Navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="timeline-line"></div>
         <a href="#hero" class="timeline-dot active" data-zone="ZONE 1 // ACCUEIL">
             <span class="dot-icon">1</span>
             <span class="dot-tooltip">Accueil</span>
@@ -63,33 +70,21 @@
         </a>
     </div>
 
-    <!-- NAVBAR AVEC MENU DÉROULANT -->
+    <!-- MENU DÉROULANT NAV -->
     <header id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="logo">
-                <span class="glitch-text" data-text="ASTT">ASTT</span> 
-                <span class="text-neon-cyan">E-SPORT</span> 
-            </a>
-            
-            <button class="burger" aria-label="Menu">
-                <span class="burger-text">MENU</span>
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <nav class="nav-menu">
-                <ul class="nav-links">
-                    <li><a href="#hero"><i class="fas fa-home"></i> Accueil</a></li>
-                    <li><a href="#about"><i class="fas fa-vr-cardboard"></i> L'Arène VR</a></li>
-                    <li><a href="#rules"><i class="fas fa-lightbulb"></i> Règles & Conseils</a></li>
-                    <li><a href="#schedule"><i class="fas fa-sitemap"></i> Déroulement</a></li>
-                    <li><a href="#twitch" class="nav-twitch"><i class="fab fa-twitch"></i> Direct Twitch</a></li>
-                    <li><a href="#infos"><i class="fas fa-ticket-alt"></i> Guichet & Inscription</a></li>
-                    <li class="nav-register-item">
-                        <a href="https://votre-site-section-astt.fr" target="_blank" class="cyber-btn btn-register-nav"><i class="fas fa-globe"></i> Site Section ASTT</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#hero"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#about"><i class="fas fa-vr-cardboard"></i> L'Arène VR</a></li>
+                <li><a href="#rules"><i class="fas fa-lightbulb"></i> Règles & Conseils</a></li>
+                <li><a href="#schedule"><i class="fas fa-sitemap"></i> Déroulement</a></li>
+                <li><a href="#twitch" class="nav-twitch"><i class="fab fa-twitch"></i> Direct Twitch</a></li>
+                <li><a href="#infos"><i class="fas fa-ticket-alt"></i> Guichet & Inscription</a></li>
+                <li class="nav-register-item">
+                    <a href="https://votre-site-section-astt.fr" target="_blank" class="cyber-btn btn-register-nav"><i class="fas fa-globe"></i> Site Section ASTT</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!-- CONTENEUR SNAP SCROLL -->
@@ -292,7 +287,7 @@
             </div>
         </section>
 
-        <!-- ZONE 6 : INFOS & BILLETERIE (FINAL STEP) -->
+        <!-- ZONE 6 : INFOS & BILLETERIE -->
         <section id="infos" class="snap-section tour-zone" data-zone="ZONE 6 // INSCRIPTION & TARIFS">
             <div class="container">
                 <div class="section-header reveal">
@@ -334,10 +329,9 @@
                     </div>
                 </div>
 
-                <!-- IMAGE BANNIÈRE LARGEUR D'ÉCRAN APPARTENANT AUX 5 VIGNETTES -->
                 <div class="arena-banner reveal img-hud-frame tilt-effect">
                     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/22/f0/ec/restauration.jpg?w=700&h=400&s=1" alt="Arène EVA Bayonne" class="banner-img">
-                    <div class="banner-overlay cyberpunk-overlay">
+                    <div class="cyberpunk-overlay">
                         <div class="banner-caption">
                             <h3><i class="fas fa-map-marker-alt"></i> Arène <span class="eva-logo-style">EVA</span> Bayonne</h3>
                             <p class="date-highlight">Le championnat aura lieu le Vendredi 18 septembre 2026 à 17h</p>
@@ -347,10 +341,8 @@
                     <div class="hud-corner bottom-left"></div>
                 </div>
                 
-                <!-- BOUTON ULTIME INSCRIPTION DYNAMIQUE & HIGH-VISIBILITY -->
                 <div class="text-center reveal cta-wrapper">
                     <a href="https://votre-site-section-astt.fr" target="_blank" class="cyber-btn-mega-cta">
-                        <span class="cta-pulse-glow"></span>
                         <i class="fas fa-rocket cta-icon"></i>
                         <span class="cta-text">VALIDER MON INSCRIPTION AU TOURNOI</span>
                         <i class="fas fa-chevron-right cta-arrow"></i>

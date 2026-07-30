@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timelineDots = document.querySelectorAll('.timeline-dot');
 
     // ==========================================
-    // 1. GESTION DU MENU BURGER
+    // 1. GESTION DU MENU BURGER INTÉGRÉ
     // ==========================================
     const burger = document.querySelector('.burger');
     const navMenu = document.querySelector('.nav-menu');
@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             navMenu.classList.toggle('active');
             const icon = burger.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
+            if (icon) {
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
             }
         });
 
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Fermer le menu en cliquant hors de la zone
+        // Fermer le menu en cliquant en dehors
         document.addEventListener('click', (e) => {
             if (!navMenu.contains(e.target) && !burger.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (scrollTop >= top && scrollTop < top + height) {
                 
-                // GESTION DU FOND : Net sur l'Accueil (index 0), Flouté sur le reste (index > 0)
+                // GESTION DU FOND : Image claire sur l'Accueil (index 0), Ambiance Dark Arena Néon activée (index > 0)
                 if (index === 0) {
                     document.body.classList.remove('is-blurred');
                 } else {
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Mettre à jour le texte du tracker supérieur
                 const zoneName = zone.getAttribute('data-zone');
-                if (currentZoneLabel) {
+                if (currentZoneLabel && zoneName) {
                     currentZoneLabel.textContent = zoneName;
                 }
 
